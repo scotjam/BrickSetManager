@@ -37,7 +37,7 @@ A Windows desktop application for managing your brick set collection with automa
 
 ### Option 1: Using the Installer (Recommended)
 
-1. Download `BrickSetManagerSetup.exe` from the releases
+1. Download `BrickSetManagerSetup.exe` from `Installer/Output/BrickSetManagerSetup.exe` in the repository
 2. **Verify the installer** (optional but recommended):
    ```bash
    # Calculate SHA256 hash of the downloaded installer
