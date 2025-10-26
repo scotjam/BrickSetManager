@@ -59,7 +59,7 @@ A Windows desktop application for managing your brick set collection with automa
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/scotjam/BrickSetManager
    cd BrickSetManager
    ```
 
