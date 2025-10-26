@@ -38,9 +38,22 @@ A Windows desktop application for managing your brick set collection with automa
 ### Option 1: Using the Installer (Recommended)
 
 1. Download `BrickSetManagerSetup.exe` from the releases
-2. Run the installer
-3. Follow the installation wizard
-4. Launch "Brick Set Manager" from the Start Menu
+2. **Verify the installer** (optional but recommended):
+   ```bash
+   # Calculate SHA256 hash of the downloaded installer
+   powershell -Command "Get-FileHash -Path 'BrickSetManagerSetup.exe' -Algorithm SHA256"
+   ```
+
+   **Expected SHA256 Hash**:
+   ```
+   1D87D3CD3AFC3CAD13BFE60EE0F5DB09393015AD6B4841F7C074B762DBA2CE8B
+   ```
+
+   The hash should match exactly. If it doesn't match, do not run the installer.
+
+3. Run the installer
+4. Follow the installation wizard
+5. Launch "Brick Set Manager" from the Start Menu
 
 ### Option 2: Running from Source
 
@@ -99,6 +112,11 @@ cd BrickSetManager
 dotnet publish -c Release -r win-x64 --self-contained true
 cd ..\Installer
 "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
+```
+
+**Alternative** (with full paths):
+```bash
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /O"<path-to-repo>\Installer\Output\" "<path-to-repo>\Installer\setup.iss"
 ```
 
 The installer will be created at `Installer\Output\BrickSetManagerSetup.exe` (~49MB)

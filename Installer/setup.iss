@@ -13,15 +13,15 @@ AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={autopf}\BrickSetManager
 DefaultGroupName={#MyAppName}
-AllowNoIcons=yes
+DisableProgramGroupPage=yes
 OutputDir=Output
 OutputBaseFilename=BrickSetManagerSetup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=lowest
-ArchitecturesAllowed=x64
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 
 ; App icon and images
 ;SetupIconFile=..\BrickSetManager\icon.ico
