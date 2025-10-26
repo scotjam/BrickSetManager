@@ -1,0 +1,56 @@
+<Window x:Class="BrickSetManager.Windows.ImportCSVConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Import CSV - Confirm" Height="350" Width="550"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" Text="Import Rebrickable CSV" FontSize="16" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <!-- Explanation -->
+        <Border Grid.Row="1" Background="#ECF0F1" Padding="15" BorderBrush="#BDC3C7" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="How CSV import works:" FontWeight="Bold" FontSize="13" Margin="0,0,0,10"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="•" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Sets from the CSV that are NOT in your database will be added"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="•" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Sets from the CSV that ARE already in your database will have their quantities UPDATED to match the CSV (not incremented)"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="•" FontWeight="Bold" Margin="0,0,10,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Sets in your database that are NOT in the CSV will be kept (see option below)"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Remove option -->
+        <CheckBox Grid.Row="2" x:Name="RemoveNotInCSVCheckBox" Margin="0,15,0,0">
+            <TextBlock TextWrapping="Wrap">
+                <Run Text="Remove sets from database that are NOT in the CSV" FontWeight="Bold"/>
+                <LineBreak/>
+                <Run Text="(Default: Keep all existing sets)" FontSize="11" Foreground="#7F8C8D"/>
+            </TextBlock>
+        </CheckBox>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button x:Name="ContinueButton" Content="Continue Import" Width="130" Height="35" Click="ContinueButton_Click"
+                    Background="#27AE60" Foreground="White" BorderThickness="0" IsDefault="True"/>
+            <Button x:Name="CancelButton" Content="Cancel" Width="100" Height="35" Click="CancelButton_Click"
+                    Background="#95A5A6" Foreground="White" BorderThickness="0" Margin="10,0,0,0" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
